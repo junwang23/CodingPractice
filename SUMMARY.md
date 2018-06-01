@@ -13,3 +13,7 @@
 
 * [All O\`one Data Structure](data-structure-design/all-o-one-data-structure.md)
 
+## Binary Search
+
+* [K-th Smallest Prime Fraction](binary-search/k-th-smallest-prime-fraction.md)
+
