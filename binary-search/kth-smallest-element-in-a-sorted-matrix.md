@@ -18,7 +18,7 @@ You may assume k is always valid, 1 ≤ k ≤ n2.Have you met this question in a
 
 `matrix = [[ 1, 5, 9],  
           [10, 11, 13],  
-          [12, 13, 15]],  
+          [12, 13, 15]]  
 k = 8  
 return 13.`
 
