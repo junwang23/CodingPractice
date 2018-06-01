@@ -68,3 +68,5 @@ public class Solution {
 }
 ```
 
+P. S. it is weird that if we put the code of the function `countLessEqual` inside the main function LintCode would MLE.
+
