@@ -15,5 +15,6 @@
 
 ## Binary Search
 
+* [Kth Smallest Element in a Sorted Matrix](binary-search/kth-smallest-element-in-a-sorted-matrix.md)
 * [K-th Smallest Prime Fraction](binary-search/k-th-smallest-prime-fraction.md)
 
