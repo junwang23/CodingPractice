@@ -9,5 +9,7 @@
 * [Paint House I & II](dynamic-programming-1/paint-house-i-and-ii.md)
 * [Longest Palindromic Subsequence](dynamic-programming-1/longest-palindromic-subsequence.md)
 
-## Binary Tree
+## Data Structure Design
+
+* [All O\`one Data Structure](data-structure-design/all-o-one-data-structure.md)
 
