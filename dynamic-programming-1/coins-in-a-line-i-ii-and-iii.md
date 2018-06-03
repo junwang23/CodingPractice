@@ -1,4 +1,4 @@
-# Coins in a Line I, II, and III
+# Coins in a Line I II & III
 
 LintCode 394, 395, and 396
 

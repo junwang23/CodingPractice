@@ -4,7 +4,7 @@
 
 ## Dynamic Programming
 
-* [Coins in a Line I, II, and III](dynamic-programming-1/coins-in-a-line-i-ii-and-iii.md)
+* [Coins in a Line I II & III](dynamic-programming-1/coins-in-a-line-i-ii-and-iii.md)
 * [k Sum](dynamic-programming-1/k-sum.md)
 * [Longest Palindromic Subsequence](dynamic-programming-1/longest-palindromic-subsequence.md)
 * [Paint Fence](dynamic-programming-1/paint-fence.md)
