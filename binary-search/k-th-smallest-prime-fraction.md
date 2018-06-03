@@ -36,7 +36,9 @@ Variation of the typical problem _searching in a sorted matrix_.
 
 Since A is sorted and contains only primes, if we arrange all the fractions into a matrix, it will be a upper triangular where each row is sorted max to min and each column is sorted min to max, i.e. `frac[i][j] < frac[i][j - 1]` and `frac[i][j] < frac[i + 1][j]` where `frac[i][j] = A[i]/A[j]`
 
-Then we count the number of fractions smaller than a value by scanning through each row with a monotonically increasing column pointer. If there are more than K element satisfying `frac[i][j] < m`, we make `m` smaller, otherwise make it bigger, by binary searching within the interval of \[0.0, 1.0\].
+Then we count the number of fractions smaller than a value by scanning through each row with a monotonically increasing column pointer, as in every row, the only way to a smaller fraction value is for the column pointer to go right.
+
+ If there are more than K elements in total satisfying `frac[i][j] < m`, we make `m` smaller, otherwise make it bigger, by binary searching within the interval of \[0.0, 1.0\].
 
 The only extra work here is to keep tracking the numbers making the largest fraction in each iteration. As we are scanning from left to right in each row and there is no guarantee that the last element we reached in a row is larger than the last element reached in the previous row, we need to maintain a `maxFrac`.
 
