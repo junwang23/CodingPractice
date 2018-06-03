@@ -43,8 +43,6 @@ There is also a mathematical solution for problem I, which we can simply return 
 
 Problem II becomes more complex as each coin now has different values. But we can still define `dp[i]` as the maximum total a player can get if he/she starts from i. The player can either take one coin or two coins, so does the other player. By assuming player 2 will always make the optimal move, if player 1 takes one coin, then `take1 = coin[i] + min(dp[i + 2], dp[i + 3])`, and if takes two, then `take2 = coin[i] + coin[i + 1] + min(dp[i + 3], dp[i + 4])`. Player 1 also makes the best move, so `dp[i] = max(take1, take2)`. Also, if a player can at most make `dp[0]`, then the opponent can get `total value of all coins - dp[0]`.
 
-Note that here we iterate the 2D dp array diagonally as the values from longer coin arrays rely on the values from shorter coin arrays.
-
 ```java
 public boolean firstWillWin(int[] values) {
     // write your code here
@@ -68,6 +66,8 @@ public boolean firstWillWin(int[] values) {
 ```
 
 Problem III further changes the rules by allowing a player to take one coin from either end, however, we can still solve it using the very same idea of min-max in 2D. We define dp\[i\]\[j\] as the max value a player can get when coin i to coin j are left. The player will take either the left-end coin so `total1 = coin[i] + min(dp[i + 2][j], dp[i + 1][j - 1])`, or the right-end coin `total2 = coin[j] + min(dp[i][j - 2], dp[i + 1][j - 1])`. Then the player takes the best move so `dp[i][j] = max(total1, total2)`.
+
+Note that here we iterate the 2D dp array diagonally as the values from longer coin arrays rely on the values from shorter coin arrays.
 
 ```java
 public boolean firstWillWin(int[] values) {
