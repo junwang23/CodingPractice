@@ -43,47 +43,59 @@ The time and space complexity are both O\(m\*n\).
 ```java
 public class Solution {
     int[][] dir = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
-    /** @param grid: The gird
-    *   @return: Return the steps you need at least
-    */
+    /**
+     * @param grid: The gird
+     * @return: Return the steps you need at least
+     */
     public int getBestRoad(int[][] grid) {
-        // Write your code here int n = grid.length; int m = grid[0].length;
+        // Write your code here
+        int n = grid.length;
+        int m = grid[0].length;
+        
         int[][] distToUL = bfs(grid, n, m, 0, 0);
         int[][] distToLR = bfs(grid, n, m, n - 1, m - 1);
-        int minDist = m*n;
+        
+        int minDist = m * n;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 if (grid[i][j] == 1) {
-                    minDist = Math.min(minDist, distToUL[i][j] + distToLR[i][j]); 
-                } 
+                    minDist = Math.min(minDist, distToUL[i][j] + distToLR[i][j]);
+                }
             }
         }
-        return minDist >= m  n ? -1 : minDist;
+        return minDist >= m * n ? -1 : minDist;
     }
-
-    int[][] bfs(int[][] grid, int n, int m, int x, int y) {
-        boolean[][] visited = new boolean[n][m]; 
-        visited[x][y] = true; 
-        int[][] distMat = new int[n][m]; 
+    
+    int[][] bfs(int[][] grid, int n, int m, int sx, int sy) {
+        boolean[][] visited = new boolean[n][m];
+        visited[sx][sy] = true;
+        int[][] distMat = new int[n][m];
         for (int i = 0; i < n; i++) {
-            Arrays.fill(distMat[i], n * m);
+            for (int j = 0; j < m; j++) {
+                if (grid[i][j] == 1)
+                    distMat[i][j] = n * m;
+            }
         }
-        Queue q = new LinkedList<>();
-        q.offer(new int[]{x, y});
+        
+        Queue<int[]> q = new LinkedList<>();
+        q.offer(new int[]{sx, sy});
         int dist = 0;
         while (!q.isEmpty()) {
             int size = q.size();
             while (size-- > 0) {
                 int[] cur = q.poll();
+                int x = cur[0];
+                int y = cur[1];
+                if (grid[x][y] == 1) {
+                    distMat[x][y] = dist;
+                    continue;
+                }
                 for (int[] d: dir) {
-                    int r = cur[0] + d[0];
-                    int c = cur[1] + d[1];
+                    int r = x + d[0];
+                    int c = y + d[1];
                     if (r >= 0 && r < n && c >= 0 && c < m && !visited[r][c]) {
                         visited[r][c] = true;
-                        if (grid[r][c] == 0)
-                            q.offer(new int[]{r, c});
-                        else
-                            distMat[r][c] = Math.min(distMat[r][c], dist + 1);
+                        q.offer(new int[]{r, c});
                     }
                 }
             }
