@@ -48,36 +48,44 @@ The time and space complexity are both O\(n \* totalProfit  \* totalCost\).
 #### Code
 
 ```java
-public int numOfPlan (int n, int totalProfit, int totalCost, int[] a, int[] b) {
-    long mod = 1000000007; 
-    long [][][]dp = new long [n + 1][totalProfit + 2][totalCost + 1]; 
-    // dp[k][i][j] = # of schemes with k cards, totalProfit of i, and totalCost of j
-    dp[0][0][0] = 1; 
-    for (int k = 1; k <= n; k++) {
-        // the card is counted from 1 
-        for (int i = 0; i <= totalProfit + 1; i++) {
-            // more than totalProfit 
-            for (int j = 0; j < totalCost; j++) {
-                // less than totalCost
-                if (dp[k - 1][i][j] > 0) { 
-                    dp[k][i][j] += dp[k - 1][i][j];
-                    dp[k][i][j] %= mod;
-                    if (j + b[k - 1] < totalCost) {
-                        int profit = Math.min(totalProfit + 1, i + a[k - 1]);
-                        dp[k][profit][j + b[k - 1]] += dp[k - 1][i][j];
-                        dp[k][profit][j + b[k - 1]] %= mod;
+public class Solution {
+    /**
+     * @param n: The number of cards
+     * @param totalProfit: The totalProfit
+     * @param totalCost: The totalCost
+     * @param a: The profit of cards
+     * @param b: The cost of cards
+     * @return: Return the number of legal plan
+     */
+    public int numOfPlan(int n, int totalProfit, int totalCost, int[] a, int[] b) {
+        // Write your code here
+        long mod = 1000000007;
+        long [][][]dp = new long [n + 1][totalProfit + 2][totalCost + 1];
+        // dp[k][i][j] = # of schemes with k cards, totalProfit of i, and totalCost of j
+        dp[0][0][0] = 1;
+        for (int k = 1; k <= n; k++) { // the card is counted from 1
+            for (int i = 0; i <= totalProfit + 1; i++) { // more than totalProfit
+                for (int j = 0; j < totalCost; j++) { // less than totalCost
+                  if (dp[k - 1][i][j] > 0) {
+                        dp[k][i][j] += dp[k - 1][i][j];
+                        dp[k][i][j] %= mod;
+                        if (j + b[k - 1] < totalCost) {
+                            int profit = Math.min(totalProfit + 1, i + a[k - 1]);
+                            dp[k][profit][j + b[k - 1]] += dp[k - 1][i][j];
+                            dp[k][profit][j + b[k - 1]] %= mod;
+                        }
                     }
                 }
             }
         }
+        long sum = 0;
+        for (int j = 0; j < totalCost; j++) {
+            sum = (sum + dp[n][totalProfit + 1][j]) % mod;
+        }
+        return (int)sum;
     }
-    long sum = 0;
-    for (int j = 0; j < totalCost; j++) {
-        sum = (sum + dp[n][totalProfit + 1][j]) % mod;
-    }
-    return (int)sum;
 }
 ```
 
-**P. S.** As each inner iteration only deals with k - 1 and k cards, we can optimize the memory to O\(totalProfit  \* totalCost\).
+**P. S.** As each inner iteration only deals with k - 1 and k cards, we can actually optimize the memory to O\(totalProfit  \* totalCost\).
 

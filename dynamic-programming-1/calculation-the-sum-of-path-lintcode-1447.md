@@ -44,10 +44,51 @@ Time and space complexity are both O\(m\*n\). But actually is bounded by the lar
 #### Code
 
 ```java
-
 /**
-Definition for a point.class Point {int x;int y;Point() { x = 0; y = 0; }Point(int a, int b) { x = a; y = b; }}*/
-public class Solution { int mod = 1000000007; /**
-@param l: The length of the matrix@param w: The width of the matrix@param points: three points @return: The sum of the paths sum / public long calculationTheSumOfPath(int l, int w, Point[] points) { // Write your code here Arrays.sort(points, new Comparator() { @Override public int compare(Point p1, Point p2) { return p1.x == p2.x ? p1.y - p2.y : p1.x - p2.x; } }); long total = count(points[0].x, points[0].y); for (int i = 1; i < 3; i++) { total = total  count(points[i].x - points[i - 1].x + 1, points[i].y - points[i - 1].y + 1) % mod; } total = total * count(l - points[2].x + 1, w - points[2].y + 1) % mod; return total; }long count(int m, int n) { long sum = 0; long[] dp = new long[n]; Arrays.fill(dp, 1); for (int i = 1; i < m; i++) { for (int j = 1; j < n; j++) { dp[j] = (dp[j] + dp[j - 1]) % mod; } } return dp[n - 1]; } }
+ * Definition for a point.
+ * class Point {
+ *     int x;
+ *     int y;
+ *     Point() { x = 0; y = 0; }
+ *     Point(int a, int b) { x = a; y = b; }
+ * }
+ */
+
+public class Solution {
+    int mod = 1000000007;
+    /**
+     * @param l: The length of the matrix
+     * @param w: The width of the matrix
+     * @param points: three points 
+     * @return: The sum of the paths sum
+     */
+    public long calculationTheSumOfPath(int l, int w, Point[] points) {
+        // Write your code here
+        Arrays.sort(points, new Comparator<Point>() {
+            @Override
+            public int compare(Point p1, Point p2) {
+                return p1.x == p2.x ? p1.y - p2.y : p1.x - p2.x;
+            }
+        });
+        long total = count(points[0].x, points[0].y);
+        for (int i = 1; i < 3; i++) {
+            total = total * count(points[i].x - points[i - 1].x + 1, points[i].y - points[i - 1].y + 1) % mod;
+        }
+        total = total * count(l - points[2].x + 1, w - points[2].y + 1) % mod;
+        return total;
+    }
+    
+    long count(int m, int n) {
+        long sum = 0;
+        long[] dp = new long[n];
+        Arrays.fill(dp, 1);
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                dp[j] = (dp[j] + dp[j - 1]) % mod;
+            }
+        }
+        return dp[n - 1];
+    }
+}
 ```
 
