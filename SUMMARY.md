@@ -10,7 +10,6 @@
 * [Paint Fence](dynamic-programming-1/paint-fence.md)
 * [Paint House I & II](dynamic-programming-1/paint-house-i-and-ii.md)
 * [Palindrome Partitioning I & II](dynamic-programming-1/palindrome-partitioning-i-and-ii.md)
-* [01 Matrix Walking Problem \[LintCode 1446\]](dynamic-programming-1/01-matrix-walking-problem-lintcode-1446.md)
 * [Calculation The Sum Of Path \[LintCode 1447\]](dynamic-programming-1/calculation-the-sum-of-path-lintcode-1447.md)
 * [Card Game \[LintCode 1448\]](dynamic-programming-1/card-game-lintcode-1448.md)
 
@@ -23,3 +22,6 @@
 * [Kth Smallest Element in a Sorted Matrix](binary-search/kth-smallest-element-in-a-sorted-matrix.md)
 * [K-th Smallest Prime Fraction](binary-search/k-th-smallest-prime-fraction.md)
 
+## Graph
+
+* [01 Matrix Walking Problem \[LintCode 1446\]](graph/01-matrix-walking-problem-lintcode-1446.md)
