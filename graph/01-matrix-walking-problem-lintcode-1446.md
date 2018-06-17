@@ -4,7 +4,7 @@ LintCode 1446
 
 ## Problem
 
-#### Description
+### Description
 
 Given an `01` matrix `gird` of size `n*m`, `1` is a wall, `0` is a road, now you can turn a `1` in the `grid` into `0`, Is there a way to go from the upper left corner to the lower right corner? If there is a way to go, how many steps to take at least?
 
@@ -13,7 +13,7 @@ Given an `01` matrix `gird` of size `n*m`, `1` is a wall, `0` is a road, now you
 1 ≤ m ≤ 1 ∗ 10^​3​​
 {% endhint %}
 
-#### Example
+### Example
 
 Given `a = [[0,1,0,0,0],[0,0,0,1,0],[1,1,0,1,0],[1,1,1,1,0]]`，return `7`.
 
@@ -51,10 +51,10 @@ public class Solution {
         // Write your code here
         int n = grid.length;
         int m = grid[0].length;
-        
+
         int[][] distToUL = bfs(grid, n, m, 0, 0);
         int[][] distToLR = bfs(grid, n, m, n - 1, m - 1);
-        
+
         int minDist = m * n;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
@@ -65,7 +65,7 @@ public class Solution {
         }
         return minDist >= m * n ? -1 : minDist;
     }
-    
+
     int[][] bfs(int[][] grid, int n, int m, int sx, int sy) {
         boolean[][] visited = new boolean[n][m];
         visited[sx][sy] = true;
@@ -76,7 +76,7 @@ public class Solution {
                     distMat[i][j] = n * m;
             }
         }
-        
+
         Queue<int[]> q = new LinkedList<>();
         q.offer(new int[]{sx, sy});
         int dist = 0;
@@ -105,3 +105,4 @@ public class Solution {
     }
 }
 ```
+

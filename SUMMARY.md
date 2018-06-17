@@ -4,14 +4,14 @@
 
 ## Dynamic Programming
 
-* [Coins in a Line I, II, & III](dynamic-programming-1/coins-in-a-line-i-ii-and-iii.md)
-* [k Sum](dynamic-programming-1/k-sum.md)
-* [Longest Palindromic Subsequence](dynamic-programming-1/longest-palindromic-subsequence.md)
-* [Paint Fence](dynamic-programming-1/paint-fence.md)
-* [Paint House I & II](dynamic-programming-1/paint-house-i-and-ii.md)
-* [Palindrome Partitioning I & II](dynamic-programming-1/palindrome-partitioning-i-and-ii.md)
-* [Calculation The Sum Of Path \[LintCode 1447\]](dynamic-programming-1/calculation-the-sum-of-path-lintcode-1447.md)
-* [Card Game \[LintCode 1448\]](dynamic-programming-1/card-game-lintcode-1448.md)
+* [Coins in a Line I, II, & III](dynamic-programming/coins-in-a-line-i-ii-and-iii.md)
+* [k Sum](dynamic-programming/k-sum.md)
+* [Longest Palindromic Subsequence](dynamic-programming/longest-palindromic-subsequence.md)
+* [Paint Fence](dynamic-programming/paint-fence.md)
+* [Paint House I & II](dynamic-programming/paint-house-i-and-ii.md)
+* [Palindrome Partitioning I & II](dynamic-programming/palindrome-partitioning-i-and-ii.md)
+* [Calculation The Sum Of Path \[LintCode 1447\]](dynamic-programming/calculation-the-sum-of-path-lintcode-1447.md)
+* [Card Game \[LintCode 1448\]](dynamic-programming/card-game-lintcode-1448.md)
 
 ## Data Structure Design
 
@@ -25,3 +25,4 @@
 ## Graph
 
 * [01 Matrix Walking Problem \[LintCode 1446\]](graph/01-matrix-walking-problem-lintcode-1446.md)
+

@@ -6,7 +6,7 @@ LeetCode 432
 
 ## Problem
 
-#### Description
+### Description
 
 Implement a data structure supporting the following operations:
 
@@ -15,7 +15,7 @@ Implement a data structure supporting the following operations:
 * GetMaxKey\(\) - Returns one of the keys with maximal value. If no element exists, return an empty string "".
 * GetMinKey\(\) - Returns one of the keys with minimal value. If no element exists, return an empty string "".
 
-#### Challenge
+### Challenge
 
 Perform all these in O\(1\) time complexity.
 
@@ -27,7 +27,7 @@ When the value of a key is increased or decreased, we remove the key from its cu
 
 We also keep tracking the head and tail of the double link list, and keep the list sorted. Then we can achieve `GetMaxKey()` and `GetMinKey()` in O\(1\) time by just visiting the head or the tail.
 
-#### Code
+### Code
 
 ```java
 class AllOne {

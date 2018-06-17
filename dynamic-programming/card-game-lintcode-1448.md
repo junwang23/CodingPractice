@@ -4,7 +4,7 @@ LintCode 1448
 
 ## Problem
 
-#### Description
+### Description
 
 A card game that gives you two non-negative integers: `totalProfit`, `totalCost`, and `n` cards'information. The `i`th card has a profit value `a[i]`and a cost value `b[i]`.It is possible to select any number of cards from these cards, form a scheme. Now we want to know how many schemes are satisfied that all selected cards' profit values are greater than `totalProfit` and the costs are less than `totalCost`.
 
@@ -17,7 +17,7 @@ Since this number may be large, you only need to return the solution number mod 
 0 ≤ totalCost ≤ 100
 {% endhint %}
 
-#### Example
+### Example
 
 Given `n = 2`，`totalProfit = 3`，`totalCost = 5`，`a = [2,3]`，`b = [2,2]` ，return`1`.
 
@@ -41,11 +41,11 @@ The legal solutions at this time are:
 
 The smaller problem is to calculate the number of schemes with the first k cards with total profit of i and total cost of j, i.e. `dp[k][i][j]`. As we can store all solutions with `i > totalProfit` to `dp[k][totalProfit + 1][j]`, the answer would then be the sum of `dp[n][totalProfit + 1][j]` where `j < totalCost`.
 
-To fill the 3D matrix, if `dp[k - 1][i][j] > 0`, we have`dp[k][i][j] += dp[k - 1][i][j]`, and if `j + b[k] < totalCost`, we have`dp[k][i + a[k]][j + b[k]] += dp[k - 1][i][j]`. 
+To fill the 3D matrix, if `dp[k - 1][i][j] > 0`, we have`dp[k][i][j] += dp[k - 1][i][j]`, and if `j + b[k] < totalCost`, we have`dp[k][i + a[k]][j + b[k]] += dp[k - 1][i][j]`.
 
-The time and space complexity are both O\(n \* totalProfit  \* totalCost\).
+The time and space complexity are both O\(n \* totalProfit \* totalCost\).
 
-#### Code
+### Code
 
 ```java
 public class Solution {
@@ -87,5 +87,5 @@ public class Solution {
 }
 ```
 
-**P. S.** As each inner iteration only deals with k - 1 and k cards, we can actually optimize the memory to O\(totalProfit  \* totalCost\).
+**P. S.** As each inner iteration only deals with k - 1 and k cards, we can actually optimize the memory to O\(totalProfit \* totalCost\).
 

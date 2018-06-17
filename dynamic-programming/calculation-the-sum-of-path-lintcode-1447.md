@@ -4,13 +4,13 @@ LintCode 1447
 
 ## Problem
 
-#### Description
+### Description
 
 Enter the length `l` and width `w` of a matrix, and three points that must pass. Ask how many ways you can go from the upper left corner to the lower right corner \(every step, you can only go right or go down\). The input is guaranteed that there is at least one legal path. You only need to return the solution number mod `1000000007`.
 
 * 1 ≤ l, w ≤ 2000
 
-#### Example
+### Example
 
 Given `l=4`, `w=4`. The three mandatory points are `[1,1],[2,2],[3,3]`. Return `8`.
 
@@ -41,7 +41,7 @@ Since we can only move right and down, we know that the three points must be loc
 
 Time and space complexity are both O\(m\*n\). But actually is bounded by the largest scale of sub-problems.
 
-#### Code
+### Code
 
 ```java
 /**
@@ -77,7 +77,7 @@ public class Solution {
         total = total * count(l - points[2].x + 1, w - points[2].y + 1) % mod;
         return total;
     }
-    
+
     long count(int m, int n) {
         long sum = 0;
         long[] dp = new long[n];
