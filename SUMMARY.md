@@ -13,6 +13,7 @@
 * [Calculation The Sum Of Path \[LintCode 1447\]](dynamic-programming/calculation-the-sum-of-path-lintcode-1447.md)
 * [Card Game \[LintCode 1448\]](dynamic-programming/card-game-lintcode-1448.md)
 * [Partition Equal Subset Sum](dynamic-programming/partition-equal-subset-sum.md)
+* [Minimum Number of Refueling Stops \[LeetCode 871\]](dynamic-programming/minimum-number-of-refueling-stops-leetcode-871.md)
 
 ## Data Structure Design
 
