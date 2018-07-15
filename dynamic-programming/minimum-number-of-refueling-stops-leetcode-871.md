@@ -55,6 +55,8 @@ We made 2 refueling stops along the way, so we return 2.
 
 ## Solution
 
+### Solution 1 \(DP\)
+
 The DP solution is a bit tricky to think of. 
 
 Let `dp[t] = the furthest distance we can reach with t times of fueling`. 
@@ -69,7 +71,7 @@ Similarly, we go to stations 2. As `dp[2] >= stations[2][0]`, `dp[3] = dp[2] + s
 
 At last, we return the minimum t with `dp[t] >= target`. O\(n^2\) time and O\(n\) space.
 
-### Code
+#### Code
 
 ```java
 class Solution {
@@ -89,6 +91,46 @@ class Solution {
         }
         
         return -1;
+    }
+}
+```
+
+### Solution 2 \(Greedy\)
+
+The greedy solution keeps track of the gas left in tank whenever we pass a station and refuel when tank is below 0. We use a priority queue to store the gas supply of all passing stations using a **max heap**, so that we always refuel from the biggest gas station when necessary. By such, we guarantee the minimum refuel numbers, and also detect -1 condition when then priority queue is empty and tank is still below 0.
+
+O\(n\*log n\) time and O\(n\) space.
+
+#### Code
+
+```java
+class Solution {
+    public int minRefuelStops(int target, int startFuel, int[][] stations) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+        int tank = startFuel;
+        int res = 0, prev = 0;
+        
+        for (int[] s: stations) {
+            int loc = s[0], gas = s[1];
+            tank -= loc - prev;
+            
+            while (tank < 0 && !pq.isEmpty()) {
+                tank += pq.poll();
+                res++;
+            }
+            
+            if (tank < 0) return -1;
+            pq.offer(gas);
+            prev = loc;
+        }
+        
+        tank -= target - prev;
+        while (tank < 0 && !pq.isEmpty()) {
+            tank += pq.poll();
+            res++;
+        }
+        
+        return tank < 0 ? -1 : res;
     }
 }
 ```
