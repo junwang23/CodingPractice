@@ -97,7 +97,7 @@ class Solution {
 
 ### Solution 2 \(Greedy\)
 
-The greedy solution keeps track of the gas left in tank whenever we pass a station and refuel when tank is below 0. We use a priority queue to store the gas supply of all passing stations using a **max heap**, so that we always refuel from the biggest gas station when necessary. By such, we guarantee the minimum refuel numbers, and also detect -1 condition when then priority queue is empty and tank is still below 0.
+The greedy solution keeps track of the gas left in tank whenever we pass a station and refuel when tank is below 0. We use a **max heap** to store the gas supply of all passing stations, so that we always refuel from the biggest gas station when necessary. By such, we guarantee the minimum refuel numbers, and also detect -1 condition when the priority queue is empty and tank is still below 0.
 
 O\(n\*log n\) time and O\(n\) space.
 
