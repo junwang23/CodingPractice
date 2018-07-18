@@ -28,3 +28,7 @@
 
 * [01 Matrix Walking Problem \[LintCode 1446\]](graph/01-matrix-walking-problem-lintcode-1446.md)
 
+## Binary Indexed Tree
+
+* [Count of Range Sum](binary-indexed-tree/count-of-range-sum.md)
+
