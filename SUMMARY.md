@@ -14,6 +14,7 @@
 * [Card Game \[LintCode 1448\]](dynamic-programming/card-game-lintcode-1448.md)
 * [Partition Equal Subset Sum](dynamic-programming/partition-equal-subset-sum.md)
 * [Minimum Number of Refueling Stops \[LeetCode 871\]](dynamic-programming/minimum-number-of-refueling-stops-leetcode-871.md)
+* [Guess Number Higher or Lower II](dynamic-programming/guess-number-higher-or-lower-ii.md)
 
 ## Data Structure Design
 
