@@ -28,6 +28,7 @@
 ## Graph
 
 * [01 Matrix Walking Problem \[LintCode 1446\]](graph/01-matrix-walking-problem-lintcode-1446.md)
+* [Bus Routes/Station](graph/bus-routes-station.md)
 
 ## Binary Indexed Tree
 
